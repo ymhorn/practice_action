@@ -1,0 +1,15 @@
+name: Practice1
+on: push
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first
+        uses: actions/checkout@v3
+      - name: second
+        uses: actions/setup-node@v3
+      - name: third
+        run: npm ci
+      - name: fourth
+        run: npm run lint
+
