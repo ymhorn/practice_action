@@ -12,4 +12,8 @@ jobs:
         run: npm ci
       - name: fourth
         run: npm run lint
+      - name: fifth
+        run: npm run test
+      - name: sixth
+        run: npm run build
 
