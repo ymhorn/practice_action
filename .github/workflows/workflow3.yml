@@ -1,0 +1,8 @@
+name: practice3
+on: issues
+jobs:
+  context-output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output context
+        run: echo "${{ toJSON(runner) }}"
