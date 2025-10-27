@@ -1,0 +1,37 @@
+name: Practice2
+on: workflow_dispatch
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first
+        uses: actions/checkout@v3
+      - name: second
+        uses: actions/setup-node@v3
+      - name: third
+        run: npm ci
+      - name: fourth
+        run: npm run lint
+  second:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first
+        uses: actions/checkout@v3
+      - name: second
+        uses: actions/setup-node@v3
+      - name: third
+        run: npm ci
+      - name: fourth
+        run: npm run test
+  third:
+    needs: [first, second]
+    runs-on: ubuntu-latest
+    steps:
+      - name: first
+        uses: actions/checkout@v3
+      - name: second
+        uses: actions/setup-node@v3
+      - name: third
+        run: npm ci
+      - name: fourth
+        run: npm run build
